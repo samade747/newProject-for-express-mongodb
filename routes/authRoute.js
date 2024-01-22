@@ -1,0 +1,1 @@
+const authRoute = samad1
