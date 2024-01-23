@@ -1,15 +1,22 @@
+// Importing necessary modules
 import express from "express"
 import { authRoute } from "./routes/authRoute.js"
-import dotenv from 'dotenv'
-import { dbConnection } from "./utils/config.js"
 
+// import dotenv from 'dotenv'
+// import { dbConnection } from "./utils/config.js"
+
+// Creating an instance of the Express application
 const app = express()
-dotenv.config()
+// dotenv.config()
+
+// Middleware to parse JSON requests
 app.use(express.json())
 
+
+// function is called
 dbConnection()
 
-
+// Routes for Api route 
 app.use('/auth', authRoute)
 // app.use("/jobs", jobsRoute)
 // app.use("/categories", categoriesRoute)
@@ -132,9 +139,11 @@ app.use('/auth', authRoute)
 
 
 
-
+// setup server to listen on specified post
 const PORT = 3000
-
-app.listen(process.env.PORT, () => {
-  console.log(`my server started at port ${PORT}`)
+// app.listen(process.env.PORT, () => {
+//   console.log(`my server started at port ${PORT}`)
+// })
+app.listen(PORT, () => {
+  console.log(`Server started at port ${PORT}`)
 })
