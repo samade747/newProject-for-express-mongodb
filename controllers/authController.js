@@ -32,16 +32,52 @@ export const signupController = async (req, res) => {
         /// creating a user object with provided information
         const UsersSchemaCheck = new UsersSchema(user)
 
-        
+        // saving the user data to the database
+        const userSave = await UsersSchemaCheck.save()
 
+        // Responding with a success message
+        res.json({
+            status: true,
+            message: 'user signed up succesfully'
+        })
+    } catch (error){
+        // responding with an error message if an excepton occurs
+        res.json({
+            status: false,
+            message: error.message
+        })
+    } 
+}
+
+// Controller function for user login 
+export const loginController = async (req, res) =>{
+    try{
+        // Destructing values from the request body 
+        const {userEmail, password } = req.body
+
+        // Respond with an error if either userEmail or password is missing
+        if(!userEmail || !password) return res.status(400).json({
+            status: false,
+            message: "Missng Fields"
+        })
+
+        const isUserExist = await UsersSchema.findOne({ email: userEmail })
+
+        console.log(isUserExist, "===> isUserExist")
+
+        if
 
     }
+} 
 
 
 
 
 
-    
 
 
-}
+
+
+
+// controller function for handling forget password requests
+// export const forgetPasswordController 
