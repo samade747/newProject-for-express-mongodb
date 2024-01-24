@@ -121,5 +121,3 @@ export const forgetPasswordController = (req, res) => {
 
 
 
-// controller function for handling forget password requests
-// export const forgetPasswordController 

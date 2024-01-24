@@ -2,12 +2,12 @@
 import express from "express"
 import { authRoute } from "./routes/authRoute.js"
 
-// import dotenv from 'dotenv'
-// import { dbConnection } from "./utils/config.js"
+import dotenv from 'dotenv'
+import { dbConnection } from "./utils/config.js"
 
 // Creating an instance of the Express application
 const app = express()
-// dotenv.config()
+dotenv.config()
 
 // Middleware to parse JSON requests
 app.use(express.json())
