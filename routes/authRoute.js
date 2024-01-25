@@ -14,7 +14,7 @@ authRoute.post("/signup", signupController)
 authRoute.post("/login", loginController)
 
 // Route for user logout
-authRoute.post("/logout", logoutController)
+authRoute.post("/logout", logoutController) 
 
 // Route for handling password reset requests
 // Note: Using HTTP PUT method for updating password as it's a resource modification
