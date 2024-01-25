@@ -5,7 +5,7 @@ import { forgetPasswordController, loginController, logoutController, signupCont
 // create a router instance from express
 const authRoute = express.Router()
 
-// setting up routes with correspondng controller functions
+// setting up routes with corres pondng controller functions
 
 // Route for user registration (signup)
 authRoute.post("/signup", signupController)
