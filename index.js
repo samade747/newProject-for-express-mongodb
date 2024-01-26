@@ -141,8 +141,8 @@ app.use('/auth', authRoute)
 
 // setup server to listen on specified post
 
-app.listen(process.env.PORT, () => {
-  // console.log(`Server is started at port number ${process.env.PORT}`)
+app.listen(process.env.PORT, () => { 
+  console.log(`Server is started at port number ${process.env.PORT}`)
 })
 // app.listen(PORT, () => {
 //   
