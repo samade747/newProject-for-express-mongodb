@@ -3,13 +3,13 @@ import UsersSchema from '../models/user.js'
 
 export const signupController = async (req, res) => {
     try{
-        const { userName, userEmail, password } = req.body
-
+        const { userName, email, password } = req.body;
+        console.log(req.body, "===> req body");
         console.log(userName, "===> userName" )
         console.log(typeof userName)
 
         // check for missing fields and respond with an error if any are missing
-        if(!userName || !userEmail || !password) return res.status(400).json({
+        if(!userName || !email || !password) return res.status(400).json({
             status: false,
             message: "Missng fields pls fill all fields"
         })
@@ -25,7 +25,7 @@ export const signupController = async (req, res) => {
         // creating a user object with the provided information 
         const user = {
             userName: userName,
-            email: userEmail,
+            email: email,
             password: password
         }
 

@@ -10,7 +10,7 @@ const app = express()
 dotenv.config()
 
 // Middleware to parse JSON requests
-app.use(express.json())
+app.use(express.json());
 
 
 // function is called
